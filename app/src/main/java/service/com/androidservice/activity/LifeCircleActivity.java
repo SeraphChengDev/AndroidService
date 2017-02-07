@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import junit.framework.Test;
-
 import service.com.androidservice.R;
 import service.com.androidservice.service.TestService;
 
@@ -19,12 +17,13 @@ import service.com.androidservice.service.TestService;
  * Created by wangchengcheng on 2017/2/6.
  */
 
-public class LifeCircleActivity extends AppCompatActivity implements View.OnClickListener{
+public class LifeCircleActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mBtnUnbind;
     private Button mBtnBind;
     private Button mBtnStop;
     private Button mBtnStart;
+    private boolean mServiceBinded;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,13 +63,15 @@ public class LifeCircleActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void unbindService() {
-        Intent intent = new Intent(this, TestService.class);
-        unbindService(mServiceConn);
+        if (mServiceBinded) {
+            unbindService(mServiceConn);
+            mServiceBinded = false;
+        }
     }
 
     private void bindService() {
         Intent intent = new Intent(this, TestService.class);
-        bindService(intent, mServiceConn, BIND_AUTO_CREATE);
+        mServiceBinded = bindService(intent, mServiceConn, BIND_AUTO_CREATE);
     }
 
     private void stopService() {
