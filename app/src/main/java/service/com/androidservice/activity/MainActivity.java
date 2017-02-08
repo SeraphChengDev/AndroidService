@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnLife;
     private Button mBtnLocal;
     private Button mBtnRemote;
+    private Button mBtnMp3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtnLife = (Button)findViewById(R.id.activity_main_life);
         mBtnLocal = (Button)findViewById(R.id.activity_main_local);
         mBtnRemote = (Button)findViewById(R.id.activity_main_remote);
+        mBtnMp3 = (Button)findViewById(R.id.activity_main_mp3);
 
         mBtnLife.setOnClickListener(this);
         mBtnLocal.setOnClickListener(this);
         mBtnRemote.setOnClickListener(this);
+        mBtnMp3.setOnClickListener(this);
     }
 
 
@@ -45,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.activity_main_remote:
                 startActivity(RemoteServiceActivity.class);
+                break;
+            case R.id.activity_main_mp3:
+                startActivity(Mp3PlayerActivity.class);
                 break;
             default:
                 break;

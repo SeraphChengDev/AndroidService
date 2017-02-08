@@ -17,15 +17,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.LifeCircleActivity"/>
+        <activity android:name=".activity.LifeCircleActivity" />
 
-        <activity android:name=".activity.RemoteServiceActivity"/>
+        <activity android:name=".activity.RemoteServiceActivity" />
 
-        <activity android:name=".activity.LocalServiceActivity"/>
+        <activity android:name=".activity.LocalServiceActivity" />
 
-        <service android:name=".service.CountService"/>
+        <activity android:name=".activity.Mp3PlayerActivity" />
 
-        <service android:name=".service.TestService"/>
+        <service android:name=".service.CountService" />
+
+        <service android:name=".service.TestService" />
+
+        <service android:name=".service.PlayerService"/>
 
     </application>
 
