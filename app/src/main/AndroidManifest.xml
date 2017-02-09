@@ -27,9 +27,19 @@
 
         <service android:name=".service.CountService" />
 
-        <service android:name=".service.TestService" />
+        <service android:name=".service.LifeCircleService" />
 
-        <service android:name=".service.PlayerService"/>
+        <service android:name=".service.PlayerService" />
+
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.messenger" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
 
     </application>
 

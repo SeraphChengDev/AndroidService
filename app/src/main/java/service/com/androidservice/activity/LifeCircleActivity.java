@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import service.com.androidservice.R;
-import service.com.androidservice.service.TestService;
+import service.com.androidservice.service.LifeCircleService;
 
 /**
  * Created by wangchengcheng on 2017/2/6.
@@ -70,17 +70,17 @@ public class LifeCircleActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void bindService() {
-        Intent intent = new Intent(this, TestService.class);
+        Intent intent = new Intent(this, LifeCircleService.class);
         mServiceBinded = bindService(intent, mServiceConn, BIND_AUTO_CREATE);
     }
 
     private void stopService() {
-        Intent intent = new Intent(this, TestService.class);
+        Intent intent = new Intent(this, LifeCircleService.class);
         stopService(intent);
     }
 
     private void startService() {
-        Intent intent = new Intent(this, TestService.class);
+        Intent intent = new Intent(this, LifeCircleService.class);
         startService(intent);
     }
 

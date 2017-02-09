@@ -11,9 +11,9 @@ import service.com.androidservice.utils.LogUtils;
  * Created by wangchengcheng on 2017/2/6.
  */
 
-public class TestService extends Service {
+public class LifeCircleService extends Service {
 
-    private static final String TAG = TestService.class.getSimpleName();
+    private static final String TAG = LifeCircleService.class.getSimpleName();
 
     @Override
     public void onCreate() {
